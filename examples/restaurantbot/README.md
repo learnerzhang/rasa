@@ -21,7 +21,7 @@ assistant on your local machine. The `restaurantbot` consists of the following f
 
 To train your restaurant bot, execute
 ```
-rasa train
+rasa train --data data --out models -c config.yml
 ```
 This will store a zipped model file in `models/`.
 

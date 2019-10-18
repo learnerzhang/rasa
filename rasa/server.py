@@ -560,7 +560,7 @@ def create_app(
             async with app.agent.lock_store.lock(conversation_id):
                 tracker = get_tracker(app.agent, conversation_id)
                 output_channel = _get_output_channel(request, tracker)
-                await app.agent.execute_action(
+                await app.agent.execute_actionconversations(
                     conversation_id,
                     action_to_execute,
                     output_channel,

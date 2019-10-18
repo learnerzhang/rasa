@@ -20,7 +20,7 @@ different channels. To do so execute the following steps:
 
 1. Train a Rasa model containing the Rasa NLU and Rasa Core models by running:
     ```
-    rasa train
+    rasa train --data data --out models -c config.yml
     ```
     The model will be stored in the `/models` directory as a zipped file.
 

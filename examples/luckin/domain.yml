@@ -1,0 +1,50 @@
+intents:
+  - greet
+  - goodbye
+  - order_item
+  - ask_name
+
+slots:
+  coffee:
+    type: text
+    auto_fill: true
+  temperature:
+    type: text
+    auto_fill: true
+  matches:
+    type: unfeaturized
+
+entities:
+  - coffee
+  - temperature
+
+actions:
+  - utter_greet
+  - utter_ask_name
+  - utter_ask_temperature
+  - utter_ask_coffee
+  - utter_working_on_it
+  - action_order_item
+  - utter_order_item
+  - utter_goodbye
+
+templates:
+  utter_greet:
+    - text: "你好呀，请问你要点什么咖啡"
+  utter_ask_name:
+    - text: "我是你们的点餐小助手，我叫小L"
+    - text: "我是可爱的小L"
+    - text: "小L"
+  utter_order_item:
+    - text: "{matches}"
+  utter_default:
+    - text: "系统不明白您说的话"
+  utter_working_on_it:
+    - text: "正在订餐中，请稍后 ..."
+  utter_goodbye:
+    - text: "再见！"
+  utter_ask_coffee:
+    - text: "请问需要什么口味的咖啡呢"
+  utter_ask_temperature:
+    - text: "请问需要冰的还是热的呢"
+

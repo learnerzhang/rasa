@@ -1,0 +1,15 @@
+language: "zh"
+
+pipeline:
+  - name: MitieNLP
+    model: "/Users/zhangzhen/data/MITIE-models/total_word_feature_extractor_zh.dat"
+  - name: JiebaTokenizer
+  - name: MitieEntityExtractor
+  - name: EntitySynonymMapper
+  - name: MitieFeaturizer
+  - name: SklearnIntentClassifier
+
+policies:
+  - name: MemoizationPolicy
+  - name: KerasPolicy
+    epochs: 200
