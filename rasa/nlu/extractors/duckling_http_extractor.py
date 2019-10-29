@@ -180,6 +180,7 @@ class DucklingHTTPExtractor(EntityExtractor):
             )
 
         extracted = self.add_extractor_name(extracted)
+        logging.debug(extracted)
         message.set(
             "entities", message.get("entities", []) + extracted, add_to_output=True
         )

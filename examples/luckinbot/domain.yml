@@ -1,11 +1,24 @@
 intents:
   - greet
   - goodbye
-  - order_item
+  - order_coffee
+  - order_tea
   - ask_name
+entities:
+  - coffee
+  - sugar
+  - tea
+  - number
+  - temperature
 
 slots:
   coffee:
+    type: text
+    auto_fill: true
+  tea:
+    type: text
+    auto_fill: true
+  sugar:
     type: text
     auto_fill: true
   temperature:
@@ -14,15 +27,13 @@ slots:
   matches:
     type: unfeaturized
 
-entities:
-  - coffee
-  - temperature
-
 actions:
   - utter_greet
   - utter_ask_name
   - utter_ask_temperature
+  - utter_ask_sugar
   - utter_ask_coffee
+  - utter_ask_tea
   - utter_working_on_it
   - action_order_item
   - utter_order_item
@@ -30,7 +41,7 @@ actions:
 
 templates:
   utter_greet:
-    - text: "你好呀，请问你要点什么咖啡"
+    - text: "你好呀，请问你要点什么咖啡/小鹿茶"
   utter_ask_name:
     - text: "我是你们的点餐小助手，我叫小L"
     - text: "我是可爱的小L"
@@ -44,7 +55,11 @@ templates:
   utter_goodbye:
     - text: "再见！"
   utter_ask_coffee:
-    - text: "请问需要什么口味的咖啡呢"
+    - text: "请问需要什么口味的咖啡呢?"
+  utter_ask_tea:
+    - text: "请问需要类型的小鹿茶?"
+  utter_ask_sugar:
+    - text: "是否需要加糖呢"
   utter_ask_temperature:
-    - text: "请问需要冰的还是热的呢"
+    - text: "请问需要加冰吗"
 
